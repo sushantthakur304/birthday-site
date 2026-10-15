@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Happy Birthday Toji 🩷 | Our 10-Year Story by Mishtyy</title>
+    <meta name="description"
+        content="A romantic, interactive digital love story created by Mishtyy for Toji's birthday. Celebrating almost 10 years together.">
+    <meta name="theme-color" content="#ffd1dc">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <!-- Romantic Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;700;800&family=Outfit:wght@400;500;600;700;800&family=Sacramento&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/mobile.css">
+</head>
+
+<body>
+
+    <div class="love-progress-bar" id="loveProgressBar" aria-hidden="true"></div>
+
+    <div class="pink-atmosphere" aria-hidden="true">
+        <span class="pink-orb orb-a"></span>
+        <span class="pink-orb orb-b"></span>
+        <span class="pink-orb orb-c"></span>
+        <span class="pink-sparkle-field"></span>
+    </div>
+
+    <!-- Ambient Canvas for Floating Hearts & Cherry Blossom Petals -->
+    <canvas id="romanticParticleCanvas" class="romantic-canvas" aria-hidden="true"></canvas>
+
+    <!-- Dedicated Background Audio Element -->
+    <audio id="bgMusic" src="assets/audio/alfaz.mp3" loop preload="auto"></audio>
+
+    <!-- Floating Background Music Control Widget -->
+    <button id="floatingMusicBtn" class="floating-music-btn paused" type="button" aria-label="Toggle Background Music" title="Background Music: Alfaz">
+        <span class="floating-music-disc">🎵</span>
+        <span id="floatingMusicText" class="floating-music-status">Alfaz 🎵</span>
+    </button>
+
+    <!-- ======================================================= -->
+    <!-- 🌸 1. MAGICAL OPENING SCREEN                            -->
+    <!-- ======================================================= -->
+    <div id="openingScreen" class="opening-screen-overlay" role="dialog" aria-modal="true">
+        <div class="opening-css-hearts" aria-hidden="true">
+            <span>🩷</span><span>🌸</span><span>🩷</span><span>✨</span><span>🩷</span><span>🌸</span>
+        </div>
+        <div class="opening-dialog-box">
+            <span class="opening-gift-ribbon">A gift made only for you</span>
+            <div id="openingDuo" class="opening-character-duo"></div>
+            <div class="opening-text-container">
+                <p id="openingText" class="opening-animated-text">Hey Toji... 🩷</p>
+            </div>
+            <button id="enterWorldBtn" class="enter-world-button visible" aria-label="Enter Toji and Mishtyy's Love Story">
+                <span>Enter Our World 🩷</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="romantic-nav-header">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <span class="brand-heart">🩷</span>
+                <span class="brand-names">Mishtyy & Toji</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#story">Our Story</a>
+                <a href="#gallery">Memories</a>
+                <a href="#reasons">Reasons</a>
+                <a href="#letter">Letter</a>
+                <a href="#music">Our Song</a>
+                <a href="#future">Future</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="site-content">
+        <!-- ======================================================= -->
+        <!-- 🎂 2. BIRTHDAY HERO SECTION                             -->
+        <!-- ======================================================= -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-sparkles-top">✨ 🌸 ✨</div>
+
+                <span class="hero-date-badge">17 October</span>
+                <h1 class="hero-title">Happy Birthday, Toji 🩷</h1>
+                <p class="hero-script">my love, my world, my forever</p>
+
+                <div class="hero-love-stats">
+                    <div class="love-stat">
+                        <strong>~10</strong>
+                        <span>Years Together</span>
+                    </div>
+                    <span class="love-stat-heart">🩷</span>
+                    <div class="love-stat">
+                        <strong>17 Oct</strong>
+                        <span>Your Special Day</span>
+                    </div>
+                    <span class="love-stat-heart">🩷</span>
+                    <div class="love-stat">
+                        <strong>∞</strong>
+                        <span>Reasons I Love You</span>
+                    </div>
+                </div>
+
+                <div class="hero-tagline-box">
+                    <p class="hero-quote">“Today isn't just another day.”</p>
+                    <p class="hero-quote-highlight">“Today is the day the world got you...”</p>
+                    <p class="hero-quote-sub">“...and somehow, years later, you became my world.”</p>
+                </div>
+
+                <!-- Recurring Character Centerpiece -->
+                <div class="hero-characters-stage">
+                    <div id="heroGirlContainer" class="hero-character-box girl-box" title="Toji"></div>
+                    <div class="hero-cake-box">
+                        <div class="cake-illustration">
+                            <span class="cake-emoji">🎂</span>
+                            <div class="cake-glow"></div>
+                        </div>
+                    </div>
+                    <div id="heroPandaContainer" class="hero-character-box panda-box" title="Cute Panda"></div>
+                </div>
+
+                <!-- Real-time Birthday Countdown -->
+                <div class="countdown-card" id="countdownCard">
+                    <div id="countdownWrapper" class="countdown-active-view">
+                        <h3 class="countdown-heading">Toji's Birthday Is In... ⏰</h3>
+                        <div class="countdown-grid">
+                            <div class="time-block">
+                                <span class="time-num" id="countDays">00</span>
+                                <span class="time-label">Days</span>
+                            </div>
+                            <div class="time-colon">:</div>
+                            <div class="time-block">
+                                <span class="time-num" id="countHours">00</span>
+                                <span class="time-label">Hours</span>
+                            </div>
+                            <div class="time-colon">:</div>
+                            <div class="time-block">
+                                <span class="time-num" id="countMins">00</span>
+                                <span class="time-label">Minutes</span>
+                            </div>
+                            <div class="time-colon">:</div>
+                            <div class="time-block">
+                                <span class="time-num" id="countSecs">00</span>
+                                <span class="time-label">Seconds</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Celebratory Banner shown on October 17th -->
+                    <div id="celebrationWrapper" class="celebration-view" style="display: none;">
+                        <div class="celebration-badge">🎉 TODAY IS THE SPECIAL DAY 🎉</div>
+                        <h2 class="celebration-title">IT'S TOJI'S DAY!!! 🎂🩷</h2>
+                        <p class="celebration-text">Happy Birthday to my favorite person in the entire universe! Today
+                            we celebrate every single thing about you.</p>
+                    </div>
+
+                    <!-- Test/Preview Celebration Button -->
+                    <div class="preview-btn-wrapper">
+                        <button id="previewCelebrationBtn" class="preview-mode-btn" type="button">
+                            ✨ Preview Birthday Day Celebration Mode 🎂
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 🩷 3. ABOUT MY TOJI (PERSONALITY & HEART)               -->
+        <!-- ======================================================= -->
+        <section id="personality" class="personality-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">My Favorite Human</span>
+                    <h2 class="section-title">The Girl Who Holds My Heart 🩷</h2>
+                    <p class="section-subtitle">You are not just my girlfriend, Toji. You are my safe space, my home,
+                        and my favorite part of life.</p>
+                </div>
+
+                <div class="personality-grid">
+                    <div class="personality-pill">
+                        <span class="pill-icon">🌸</span>
+                        <h4>Very Caring</h4>
+                        <p>You care with a tenderness so pure that it heals everything around you.</p>
+                    </div>
+                    <div class="personality-pill">
+                        <span class="pill-icon">🙈</span>
+                        <h4>Cute & Shy</h4>
+                        <p>The sweet way you blush and hide your smile is the most precious sight.</p>
+                    </div>
+                    <div class="personality-pill">
+                        <span class="pill-icon">🥺</span>
+                        <h4>Emotional Heart</h4>
+                        <p>You feel so deeply, and your compassion is one of your greatest superpowers.</p>
+                    </div>
+                    <div class="personality-pill">
+                        <span class="pill-icon">😤</span>
+                        <h4>Cute Even When Angry!</h4>
+                        <p>When you cross your arms and try to look tough, you're just irresistibly adorable.</p>
+                    </div>
+                    <div class="personality-pill">
+                        <span class="pill-icon">💭</span>
+                        <h4>The Sweetest Overthinker</h4>
+                        <p>You overthink only because your heart cares so deeply about everything.</p>
+                    </div>
+                    <div class="personality-pill highlight-pill">
+                        <span class="pill-icon">🤱</span>
+                        <h4>Cares Like a Mother</h4>
+                        <p>Sometimes you care for me almost like a mother would—and I cherish that love more than words
+                            can say.</p>
+                    </div>
+                </div>
+
+                <div class="personality-affirmation-card">
+                    <p class="affirmation-text">
+                        “I love you as my baby, my girl, my girlfriend, my future wife, and my everything.”
+                    </p>
+                    <span class="affirmation-author">— Mishtyy ❤️</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 📖 4. OUR STORY — ALMOST 10 YEARS (TIMELINE)             -->
+        <!-- ======================================================= -->
+        <section id="story" class="timeline-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">~10 Years of Love</span>
+                    <h2 class="section-title">Almost 10 Years of Us ❤️</h2>
+                    <p class="section-subtitle">From school kids in uniform to college steps, bike rides, late night
+                        talks and growing up hand in hand.</p>
+                </div>
+
+                <!-- Interactive 5-Chapter Container -->
+                <div id="timelineChaptersContainer" class="timeline-chapters-flow"></div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 📸 5. OUR MEMORY GALLERY                                -->
+        <!-- ======================================================= -->
+        <section id="gallery" class="gallery-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Moments Frozen in Time</span>
+                    <h2 class="section-title">Our Memories 📸</h2>
+                    <p class="section-subtitle">Every photo holds a piece of our 10-year journey. Filter through our
+                        story below.</p>
+                </div>
+
+                <!-- Category Tabs -->
+                <div id="galleryCategories" class="gallery-category-tabs"></div>
+
+                <!-- Photos Grid -->
+                <div id="galleryGrid" class="gallery-polaroid-grid"></div>
+
+                <!-- Interactive Photo Manager Button -->
+                <div class="gallery-upload-cta">
+                    <button id="openPhotoUploaderBtn" class="upload-modal-btn">
+                        <span>📷 Upload / Replace Photos</span>
+                    </button>
+                    <p class="upload-cta-hint">Mishtyy, you can click here anytime to replace these placeholders with
+                        real photos directly from your phone or PC!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 💕 6. 10 THINGS I LOVE ABOUT TOJI                       -->
+        <!-- ======================================================= -->
+        <section id="reasons" class="reasons-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">Straight From My Heart</span>
+                    <h2 class="section-title">10 Things I Love About You 💕</h2>
+                    <p class="section-subtitle">Tap each heart card to see a special memory and cute character reaction
+                        unfold!</p>
+                </div>
+
+                <div id="loveReasonsGrid" class="love-reasons-cards-grid"></div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 💌 7. THE BIRTHDAY LETTER                               -->
+        <!-- ======================================================= -->
+        <section id="letter" class="letter-section reveal-on-scroll">
+            <div class="section-container" id="letterSectionWrapper">
+                <div class="section-header">
+                    <span class="section-badge">From Mishtyy to Toji</span>
+                    <h2 class="section-title">A Letter For My Toji 💌</h2>
+                    <p class="section-subtitle">Take a quiet breath and open what I wrote for you.</p>
+                </div>
+
+                <!-- Envelope Stage -->
+                <div class="letter-envelope-container">
+                    <div id="letterEnvelope" class="romantic-envelope">
+                        <div class="envelope-back"></div>
+                        <div class="envelope-flap">
+                            <div class="wax-seal">
+                                <span class="seal-heart">🩷</span>
+                            </div>
+                        </div>
+                        <div class="envelope-front">
+                            <div class="envelope-stamp">
+                                <span>17 OCT</span>
+                            </div>
+                            <div class="envelope-address">
+                                <p class="address-to">To: My Dearest Toji 🌸</p>
+                                <p class="address-from">From: Mishtyy ❤️</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Open Envelope Action -->
+                    <div class="letter-action-bar">
+                        <button id="openLetterBtn" class="open-letter-btn">
+                            <span>Open My Heart 🩷</span>
+                        </button>
+                        <button id="closeLetterBtn" class="close-letter-btn" style="display: none;">
+                            <span>Fold Letter Back ✉️</span>
+                        </button>
+                    </div>
+
+                    <!-- The Handwritten Letter Parchment -->
+                    <div id="letterPaper" class="letter-parchment-sheet">
+                        <div class="parchment-ribbon">🎀</div>
+                        <div class="parchment-header">
+                            <span id="letterDate" class="letter-date-text">October 17</span>
+                            <h3 id="letterSalutation" class="letter-salutation-text">My Dearest Toji, 🩷</h3>
+                        </div>
+                        <div id="letterBodyContent" class="letter-body-text"></div>
+                        <div class="parchment-footer">
+                            <p id="letterSignature" class="letter-signature-text">Forever yours,<br>Mishtyy ❤️</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ======================================================= -->
+        <!-- 🎵 9. OUR SONG: ALFAZ — HAMZA MALIK                     -->
+        <!-- ======================================================= -->
+        <section id="music" class="music-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="music-player-card">
+                    <div class="music-header">
+                        <span class="music-vinyl-disc">
+                            <span class="disc-label">Alfaz</span>
+                        </span>
+                        <div class="music-info">
+                            <span class="section-badge">Our Dedicated Melody</span>
+                            <h2 class="music-title">Our Song 🎵</h2>
+                            <h3 class="song-name">Alfaz — Hamza Malik</h3>
+                            <p class="music-quote">“Some feelings are better said through a song...”</p>
+                        </div>
+                    </div>
+
+                    <!-- Animated Equalizer Wave Visualizer -->
+                    <div id="songVisualizer" class="song-visualizer-wave"></div>
+
+                    <!-- Progress Bar & Times -->
+                    <div class="player-timeline-box">
+                        <div class="timeline-scrubber" id="songProgress">
+                            <div class="timeline-fill" id="songProgressFill"></div>
+                        </div>
+                        <div class="timeline-timestamps">
+                            <span id="songCurrentTime">0:00</span>
+                            <span id="songDuration">--:--</span>
+                        </div>
+                    </div>
+
+                    <!-- Player Controls -->
+                    <div class="player-controls-row">
+                        <button id="songPlayBtn" class="song-play-toggle-btn" type="button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                            <span>Play Alfaz 🎵</span>
+                        </button>
+                    </div>
+
+                    <p id="songHelperNote" class="audio-helper-note" style="display:none;"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 🌙 10. OUR FUTURE — DREAMY NIGHT SCENE                   -->
+        <!-- ======================================================= -->
+        <section id="future" class="future-section reveal-on-scroll">
+            <div class="section-container">
+                <div class="section-header future-header">
+                    <span class="section-badge star-badge">✨ Under the Stars ✨</span>
+                    <h2 class="section-title">There's Still So Much Left To Live 🌙</h2>
+                    <p class="section-subtitle">Almost 10 years gave us so many memories, but I want many, many more
+                        with you.</p>
+                </div>
+
+                <!-- Dreamy Cloud Scene with Girl & Panda gazing at stars -->
+                <div id="futureCloudDuo" class="future-cloud-stage"></div>
+
+                <!-- Future Cards Grid -->
+                <div id="futurePlansGrid" class="future-cards-grid"></div>
+
+                <div class="future-promise-banner">
+                    <p>“No matter where life takes us, I want to experience every sunrise, sunset, and birthday by your
+                        side.” 🩷</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= -->
+        <!-- 🎁 11. FINAL SURPRISE & LOVE CLIMAX                     -->
+        <!-- ======================================================= -->
+        <section class="surprise-trigger-section">
+            <div class="section-container text-center">
+                <div class="final-sparkles">✨ 🎁 ✨</div>
+                <h3 class="trigger-title">Before you go...</h3>
+                <p class="trigger-subtitle">I have one last little surprise tucked away for you.</p>
+                <button id="finalSurpriseTriggerBtn" class="final-surprise-btn" type="button">
+                    <span>Toji... One Last Thing 🩷</span>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- ======================================================= -->
+    <!-- 🎁 FULLSCREEN SURPRISE MODAL                            -->
+    <!-- ======================================================= -->
+    <div id="surpriseOverlayModal" class="surprise-overlay-modal" role="dialog" aria-modal="true">
+        <div class="stars-backdrop"></div>
+        <div class="surprise-content-box">
+            <!-- Stage 1: Shaking Gift Box -->
+            <div id="surpriseGiftBox" class="gift-box-stage">
+                <div class="gift-carriers-row">
+                    <div id="giftGirlCarrier" class="carrier-box"></div>
+                    <div class="gift-box-illustration shaking-gift">
+                        <div class="gift-lid">
+                            <div class="gift-bow">🎀</div>
+                        </div>
+                        <div class="gift-body">
+                            <div class="gift-ribbon-v"></div>
+                            <div class="gift-ribbon-h"></div>
+                        </div>
+                    </div>
+                    <div id="giftPandaCarrier" class="carrier-box"></div>
+                </div>
+
+                <p class="gift-hint-text">“This one is from my heart.”</p>
+                <button id="openGiftBtn" class="open-gift-action-btn" type="button">
+                    <span>Open It 🎁</span>
+                </button>
+            </div>
+
+            <!-- Stage 2: Story Sequence Reveal -->
+            <div id="surpriseRevealSequence" class="story-seq-stage" style="display:none;">
+                <div id="revealTextContainer" class="seq-text-frame"></div>
+            </div>
+
+            <!-- Stage 3: Fullscreen Final Message Scene -->
+            <div id="surpriseFinalScene" class="final-scene-stage" style="display:none;">
+                <div class="final-scene-card">
+                    <div id="finalHugDuo" class="final-hug-container"></div>
+                    <h2 class="final-celebration-heading">Happy Birthday, Toji 🩷</h2>
+
+                    <div class="final-poetry-box">
+                        <p>Almost 10 years of knowing you.</p>
+                        <p>Years of growing.</p>
+                        <p>Years of memories.</p>
+                        <p>Years of choosing each other.</p>
+                        <p class="highlight-line">And hopefully... many, many more years to come.</p>
+                    </div>
+
+                    <div class="final-pledge-box">
+                        <p class="pledge-words">
+                            I love you, my baby.<br>
+                            My girl.<br>
+                            My girlfriend.<br>
+                            My future wife.<br>
+                            My everything.
+                        </p>
+                        <p class="final-signature">Forever yours,<br>Mishtyy ❤️</p>
+                    </div>
+
+                    <button id="closeSurpriseBtn" class="close-surprise-btn" type="button">
+                        <span>Keep This Memory in My Heart 🌸</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- 📸 LIGHTBOX MODAL FOR PHOTOS                            -->
+    <!-- ======================================================= -->
+    <div id="photoLightbox" class="lightbox-modal" role="dialog" aria-modal="true">
+        <button id="lightboxClose" class="lightbox-close-btn" aria-label="Close Lightbox">✕</button>
+        <button id="lightboxPrev" class="lightbox-nav-btn prev-btn" aria-label="Previous Photo">❮</button>
+        <button id="lightboxNext" class="lightbox-nav-btn next-btn" aria-label="Next Photo">❯</button>
+
+        <div class="lightbox-card">
+            <div class="lightbox-media-wrapper">
+                <img id="lightboxImg" src="" alt="Toji Memory">
+            </div>
+            <div class="lightbox-info">
+                <div class="lightbox-meta">
+                    <span id="lightboxTag" class="lightbox-tag-pill"></span>
+                    <span id="lightboxDate" class="lightbox-date-pill"></span>
+                </div>
+                <p id="lightboxCaption" class="lightbox-caption-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================================================= -->
+    <!-- 🛠️ PHOTO MANAGER MODAL (EASY UPLOAD WITHOUT CODE)      -->
+    <!-- ======================================================= -->
+    <div id="photoManagerModal" class="photo-manager-modal" role="dialog" aria-modal="true">
+        <div class="manager-modal-box">
+            <div class="manager-header">
+                <h3>📷 Update Photos & Memories</h3>
+                <button id="closePhotoManagerBtn" class="manager-close-btn">✕</button>
+            </div>
+            <p class="manager-desc">Choose a memory card and select a real photo from your phone or PC. It will update
+                instantly!</p>
+
+            <form id="photoUploadForm" class="manager-form">
+                <div class="form-group">
+                    <label for="photoTargetSelect">Select Memory to Update:</label>
+                    <select id="photoTargetSelect" class="form-select"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="photoFileInput">Choose Photo File:</label>
+                    <input type="file" id="photoFileInput" accept="image/*" class="form-file-input">
+                </div>
+
+                <div id="photoUploadPreview" class="upload-preview-box"></div>
+
+                <div class="form-group">
+                    <label for="photoTitleInput">Memory Title (Optional):</label>
+                    <input type="text" id="photoTitleInput" placeholder="e.g. Best Evening Bike Ride"
+                        class="form-text-input">
+                </div>
+
+                <div class="form-group">
+                    <label for="photoCaptionInput">Caption (Optional):</label>
+                    <textarea id="photoCaptionInput" rows="2" placeholder="Write a sweet memory note..."
+                        class="form-textarea"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="save-photo-btn">Save to Website 🩷</button>
+                    <button type="button" id="resetPhotosBtn" class="reset-photo-btn">Reset to Placeholders</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Romantic Footer -->
+    <footer class="romantic-footer">
+        <div class="footer-container">
+            <p class="footer-hearts" aria-hidden="true">🩷 🌸 🩷 🌸 🩷</p>
+            <p class="footer-text">Created with all my heart by <strong>Mishtyy</strong> for <strong>Toji</strong> 🩷
+            </p>
+            <p class="footer-script">Happy Birthday, my favorite person in the universe.</p>
+            <p class="footer-sub">Almost 10 Years & Counting • October 17</p>
+        </div>
+    </footer>
+
+    <!-- Scripts in order of dependency -->
+    <script src="js/config.js?v=5"></script>
+    <script src="js/characters.js?v=3"></script>
+    <script src="js/particles.js?v=3"></script>
+    <script src="js/audio-player.js?v=3"></script>
+    <script src="js/countdown.js?v=3"></script>
+    <script src="js/timeline.js?v=3"></script>
+    <script src="js/love-reasons.js?v=3"></script>
+    <script src="js/letter.js?v=3"></script>
+    <script src="js/gallery.js?v=4"></script>
+    <script src="js/surprise.js?v=3"></script>
+    <script src="js/main.js?v=5"></script>
+</body>
+
+</html>

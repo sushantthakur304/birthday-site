@@ -1,0 +1,328 @@
+/**
+ * ====================================================================
+ * 📱 MOBILE OPTIMIZATIONS (ANDROID & TOUCH DEVICES)
+ * ====================================================================
+ * Tailored specifically for smooth touch experience, no horizontal
+ * overflow, thumb-friendly tap targets, and buttery 60fps animations.
+ */
+
+@media (max-width: 768px) {
+    /* Base typography adjustments */
+    html {
+        font-size: 15px;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .section-container {
+        padding: 3.5rem 1.2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .section-subtitle {
+        font-size: 1rem;
+    }
+
+    /* 🎀 Navigation */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .nav-links {
+        display: none; /* Keep header clean and focused on content */
+    }
+
+    .nav-brand {
+        font-size: 1.15rem;
+        margin: 0 auto;
+    }
+
+    /* 🎂 Hero Section */
+    .hero-section {
+        padding: 2.5rem 1rem 2rem;
+    }
+
+    .hero-title {
+        font-size: 2.35rem;
+    }
+
+    .hero-tagline-box {
+        padding: 1.1rem 1.2rem;
+    }
+
+    .hero-quote {
+        font-size: 1.05rem;
+    }
+
+    .hero-quote-highlight {
+        font-size: 1.15rem;
+    }
+
+    .hero-characters-stage {
+        gap: 0.6rem;
+    }
+
+    .hero-character-box svg {
+        width: 105px !important;
+        height: 125px !important;
+    }
+
+    .cake-emoji {
+        font-size: 3rem;
+    }
+
+    .countdown-card {
+        padding: 1.6rem 1rem;
+    }
+
+    .time-block {
+        min-width: 58px;
+        padding: 0.6rem 0.5rem;
+    }
+
+    .time-num {
+        font-size: 1.65rem;
+    }
+
+    .time-colon {
+        font-size: 1.5rem;
+    }
+
+    /* 📖 Timeline Section */
+    .timeline-chapters-flow::before {
+        left: 20px;
+    }
+
+    .timeline-card {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .timeline-content-box {
+        padding: 1.6rem 1.2rem;
+    }
+
+    .chapter-title {
+        font-size: 1.45rem;
+    }
+
+    .timeline-character-duo {
+        gap: 0.8rem;
+    }
+
+    .timeline-character-duo svg {
+        max-width: 110px;
+        height: auto;
+    }
+
+    /* 🏍️ Bike Scene on Mobile */
+    .bike-scene-container {
+        padding: 1rem 0.5rem;
+    }
+
+    .bike-svg {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 290px;
+    }
+
+    .bike-honk-btn {
+        width: 100%;
+        max-width: 260px;
+        padding: 0.75rem 1rem;
+    }
+
+    /* 📸 Gallery Section */
+    .gallery-category-tabs {
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding-bottom: 0.5rem;
+        -webkit-overflow-scrolling: touch;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+    }
+
+    .gallery-category-tabs::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gallery-cat-btn {
+        white-space: nowrap;
+        font-size: 0.82rem;
+        padding: 0.45rem 1rem;
+        flex-shrink: 0;
+    }
+
+    .gallery-polaroid-grid {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+    }
+
+    .photo-polaroid-card {
+        transform: none !important;
+    }
+
+    .polaroid-media {
+        height: 220px;
+    }
+
+    /* 💕 10 Things I Love About Toji */
+    .love-reasons-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+    }
+
+    .heart-reason-card {
+        min-height: 290px;
+    }
+
+    /* 💌 Letter Section */
+    .romantic-envelope {
+        height: 300px;
+    }
+
+    .envelope-address {
+        font-size: 1.25rem;
+    }
+
+    .letter-parchment-sheet {
+        padding: 2.2rem 1.4rem;
+    }
+
+    .letter-salutation-text {
+        font-size: 1.9rem;
+    }
+
+    .letter-body-text {
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    .letter-signature-text {
+        font-size: 1.7rem;
+    }
+
+    /* 🎙️ Voice & 🎵 Music Players */
+    .voice-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.8rem 1.2rem;
+        gap: 1.2rem;
+    }
+
+    .voice-player-controls {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .voice-mic-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem;
+    }
+
+    .music-player-card {
+        padding: 1.8rem 1.2rem;
+    }
+
+    .music-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .song-play-toggle-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 0.95rem;
+    }
+
+    /* 🌙 Future Plans */
+    .future-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    /* 🎁 Final Surprise Modal */
+    .surprise-overlay-modal {
+        padding: 1rem;
+    }
+
+    .gift-carriers-row {
+        gap: 0.8rem;
+    }
+
+    .carrier-box svg {
+        width: 85px !important;
+        height: 105px !important;
+    }
+
+    .gift-box-illustration {
+        width: 90px;
+        height: 85px;
+    }
+
+    .gift-lid {
+        width: 102px;
+        left: -6px;
+    }
+
+    .seq-animated-text {
+        font-size: 1.85rem;
+    }
+
+    .final-scene-card {
+        padding: 2rem 1.2rem;
+    }
+
+    .final-celebration-heading {
+        font-size: 1.9rem;
+    }
+
+    .final-poetry-box p {
+        font-size: 1rem;
+    }
+
+    .pledge-words {
+        font-size: 1.15rem;
+    }
+
+    /* Lightbox & Modals */
+    .lightbox-modal {
+        padding: 0.8rem;
+    }
+
+    .lightbox-media-wrapper {
+        max-height: 280px;
+    }
+
+    .lightbox-nav-btn {
+        width: 38px;
+        height: 38px;
+        font-size: 1.2rem;
+    }
+
+    .lightbox-nav-btn.prev-btn { left: 8px; }
+    .lightbox-nav-btn.next-btn { right: 8px; }
+
+    /* Floating Music Widget Mobile */
+    .floating-music-btn {
+        bottom: 16px;
+        right: 16px;
+        padding: 8px 14px 8px 10px;
+        font-size: 0.82rem;
+        gap: 7px;
+    }
+
+    .floating-music-disc {
+        width: 26px;
+        height: 26px;
+        font-size: 0.85rem;
+    }
+}
+
